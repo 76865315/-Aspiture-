@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/research", label: "Research" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -16,10 +16,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-2xl font-bold tracking-tight text-primary">
-          Aspiture
+    <header className="absolute top-0 left-0 right-0 z-50">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <Link
+          href="/"
+          className="text-lg font-bold uppercase tracking-[0.2em] text-white"
+        >
+          Aspiture.io
         </Link>
 
         {/* Desktop nav */}
@@ -28,21 +31,14 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === link.href ? "text-primary" : "text-muted"
+              className={`text-sm font-medium transition-colors hover:text-accent ${
+                pathname === link.href ? "text-white" : "text-blue-200/70"
               }`}
             >
               {link.label}
             </Link>
           ))}
         </nav>
-
-        <Link
-          href="/contact"
-          className="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark md:inline-block"
-        >
-          Get Started
-        </Link>
 
         {/* Mobile menu button */}
         <button
@@ -51,17 +47,17 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-6 bg-foreground transition-transform ${
+            className={`h-0.5 w-6 bg-white transition-transform ${
               menuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-foreground transition-opacity ${
+            className={`h-0.5 w-6 bg-white transition-opacity ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-foreground transition-transform ${
+            className={`h-0.5 w-6 bg-white transition-transform ${
               menuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -70,27 +66,20 @@ export default function Header() {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="border-t border-border bg-white px-6 py-4 md:hidden">
+        <nav className="border-t border-white/10 bg-navy/95 px-6 py-4 backdrop-blur-md md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href ? "text-primary" : "text-muted"
+                className={`text-sm font-medium transition-colors hover:text-accent ${
+                  pathname === link.href ? "text-white" : "text-blue-200/70"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-primary-dark"
-            >
-              Get Started
-            </Link>
           </div>
         </nav>
       )}

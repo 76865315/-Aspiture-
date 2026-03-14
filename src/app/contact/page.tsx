@@ -44,16 +44,16 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-surface py-20 sm:py-28">
+      <section className="bg-navy pb-20 pt-32 sm:pt-40">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">
               Contact Us
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Let&apos;s Start a Conversation
             </h1>
-            <p className="mt-6 text-lg leading-8 text-muted">
+            <p className="mt-6 text-lg leading-8 text-blue-200/70">
               Have a question or ready to get started? Reach out and we&apos;ll get
               back to you within 24 hours.
             </p>

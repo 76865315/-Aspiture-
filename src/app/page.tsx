@@ -1,129 +1,201 @@
 import Link from "next/link";
 
-const features = [
+const services = [
   {
-    title: "Strategic Consulting",
-    description:
-      "Data-driven strategies tailored to your unique business goals and market position.",
-    icon: (
-      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
-      </svg>
-    ),
+    title: "App Development",
+    items: [
+      "Develop end-to-end app design",
+      "Applications development",
+      "Knowledge management systems",
+      "Technical integration",
+    ],
   },
   {
-    title: "Digital Transformation",
-    description:
-      "Modernize your operations with cutting-edge technology and seamless integrations.",
-    icon: (
-      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-      </svg>
-    ),
+    title: "Technical Research",
+    items: [
+      "Intuitive economics modeling",
+      "Machine learning pipelines",
+      "Data architecture design",
+      "Technical integration strategy",
+    ],
   },
   {
-    title: "Growth Acceleration",
-    description:
-      "Proven frameworks to scale your business efficiently and sustainably.",
-    icon: (
-      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-      </svg>
-    ),
+    title: "AI Integration",
+    items: [
+      "AI integration to power applications",
+      "Natural language processing",
+      "Predictive analytics",
+      "Research-led contextual AI",
+    ],
   },
 ];
 
-const stats = [
-  { value: "150+", label: "Clients Served" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "10+", label: "Years Experience" },
-  { value: "50M+", label: "Revenue Generated" },
+const projects = [
+  {
+    name: "Intelligent Workflow Engine",
+    description: "Automating complex business processes with AI-driven decision making.",
+  },
+  {
+    name: "Research Analytics Platform",
+    description: "Transforming raw research data into actionable strategic insights.",
+  },
+  {
+    name: "Adaptive Learning System",
+    description: "Building systems that evolve and improve with every interaction.",
+  },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero with background image */}
-      <section className="relative min-h-[80vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
-        />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-center px-6 py-24 sm:py-32 lg:py-40">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
-              Aspiture
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Insights That Drive{" "}
-              <span className="text-accent">Success</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-blue-100/90">
-              We partner with ambitious companies to craft data-driven strategies,
-              build innovative solutions, and deliver measurable growth.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/contact"
-                className="rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-primary-dark"
-              >
-                Start Your Journey
-              </Link>
-              <Link
-                href="/services"
-                className="rounded-lg border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-              >
-                Explore Services
-              </Link>
-            </div>
+      {/* Hero — full viewport, dark navy with tech pattern */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy">
+        {/* Subtle grid/network background */}
+        <div className="absolute inset-0 opacity-20">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="1" fill="#3b82f6" />
+              </pattern>
+              <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="white" stopOpacity="1" />
+                <stop offset="100%" stopColor="white" stopOpacity="0" />
+              </radialGradient>
+              <mask id="fadeMask">
+                <rect width="100%" height="100%" fill="url(#fade)" />
+              </mask>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" mask="url(#fadeMask)" />
+            <line x1="10%" y1="20%" x2="40%" y2="35%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.4" />
+            <line x1="60%" y1="15%" x2="85%" y2="40%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.3" />
+            <line x1="30%" y1="60%" x2="70%" y2="75%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3" />
+            <line x1="50%" y1="25%" x2="75%" y2="60%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.2" />
+            <line x1="15%" y1="70%" x2="45%" y2="50%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3" />
+            <line x1="80%" y1="20%" x2="90%" y2="70%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.2" />
+            <circle cx="40%" cy="35%" r="3" fill="#3b82f6" opacity="0.5" />
+            <circle cx="85%" cy="40%" r="2" fill="#0ea5e9" opacity="0.4" />
+            <circle cx="70%" cy="75%" r="3" fill="#3b82f6" opacity="0.4" />
+            <circle cx="75%" cy="60%" r="2" fill="#0ea5e9" opacity="0.3" />
+            <circle cx="15%" cy="70%" r="2" fill="#3b82f6" opacity="0.4" />
+            <circle cx="50%" cy="25%" r="2" fill="#0ea5e9" opacity="0.3" />
+          </svg>
+        </div>
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy" />
+
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Engineering the Future of{" "}
+            <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
+              Intelligent Applications
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-blue-200/70">
+            Engineering the future of intelligent applications — where research
+            meets code to create transformative solutions.
+          </p>
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/contact"
+              className="rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-primary/40"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/research"
+              className="rounded-lg border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
+            >
+              Our Research
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-xs tracking-widest text-blue-300/50">SCROLL</span>
+            <div className="h-8 w-px animate-pulse bg-gradient-to-b from-blue-400/50 to-transparent" />
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20 sm:py-28">
+      {/* Where Research Meets Code */}
+      <section className="bg-white py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What We Do Best
+            <h2 className="text-3xl font-bold uppercase tracking-wide text-foreground sm:text-4xl">
+              Where Research Meets Code
             </h2>
             <p className="mt-4 text-lg text-muted">
-              A comprehensive suite of services designed to propel your business
-              forward.
+              A comprehensive suite of capabilities designed to take your ideas
+              from concept to production.
             </p>
           </div>
           <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
+            {services.map((service) => (
               <div
-                key={feature.title}
+                key={service.title}
                 className="rounded-2xl border border-border bg-white p-8 transition-shadow hover:shadow-lg"
               >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {feature.title}
+                <h3 className="text-lg font-bold text-foreground">
+                  {service.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {feature.description}
-                </p>
+                <ul className="mt-4 space-y-3">
+                  {service.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-muted"
+                    >
+                      <svg
+                        className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m4.5 12.75 6 6 9-13.5"
+                        />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary py-16">
+      {/* In Development: Project Foundation */}
+      <section className="bg-navy py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl font-bold text-white sm:text-4xl">
-                  {stat.value}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+              In Development
+            </p>
+            <h2 className="mt-2 text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
+              Project Foundation
+            </h2>
+            <p className="mt-4 text-lg text-blue-200/70">
+              Meet the team behind Aspiture&apos;s core components and projects.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <div
+                key={project.name}
+                className="rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10"
+              >
+                <h3 className="text-lg font-semibold text-white">
+                  {project.name}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-blue-200/60">
+                  {project.description}
                 </p>
-                <p className="mt-1 text-sm text-blue-200">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -131,23 +203,21 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl bg-gradient-to-r from-primary to-accent px-8 py-16 text-center sm:px-16">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-blue-100">
-              Let&apos;s discuss how Aspiture can help you achieve your goals. Your
-              first consultation is on us.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-block rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-blue-50"
-            >
-              Book a Free Consultation
-            </Link>
-          </div>
+      <section className="bg-navy-light py-16">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            Ready to Build Something Intelligent?
+          </h2>
+          <p className="mt-4 text-blue-200/70">
+            Let&apos;s discuss how Aspiture can help engineer the future of your
+            applications.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark"
+          >
+            Start a Conversation
+          </Link>
         </div>
       </section>
     </>
