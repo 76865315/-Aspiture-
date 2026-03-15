@@ -48,66 +48,116 @@ const projects = [
 export default function Home() {
   return (
     <>
-      {/* Hero — full viewport, dark navy with tech pattern */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy">
-        {/* Subtle grid/network background */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="1" fill="#3b82f6" />
-              </pattern>
-              <radialGradient id="fade" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="white" stopOpacity="1" />
-                <stop offset="100%" stopColor="white" stopOpacity="0" />
-              </radialGradient>
-              <mask id="fadeMask">
-                <rect width="100%" height="100%" fill="url(#fade)" />
-              </mask>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" mask="url(#fadeMask)" />
-            <line x1="10%" y1="20%" x2="40%" y2="35%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.4" />
-            <line x1="60%" y1="15%" x2="85%" y2="40%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.3" />
-            <line x1="30%" y1="60%" x2="70%" y2="75%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3" />
-            <line x1="50%" y1="25%" x2="75%" y2="60%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.2" />
-            <line x1="15%" y1="70%" x2="45%" y2="50%" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3" />
-            <line x1="80%" y1="20%" x2="90%" y2="70%" stroke="#0ea5e9" strokeWidth="0.5" opacity="0.2" />
-            <circle cx="40%" cy="35%" r="3" fill="#3b82f6" opacity="0.5" />
-            <circle cx="85%" cy="40%" r="2" fill="#0ea5e9" opacity="0.4" />
-            <circle cx="70%" cy="75%" r="3" fill="#3b82f6" opacity="0.4" />
-            <circle cx="75%" cy="60%" r="2" fill="#0ea5e9" opacity="0.3" />
-            <circle cx="15%" cy="70%" r="2" fill="#3b82f6" opacity="0.4" />
-            <circle cx="50%" cy="25%" r="2" fill="#0ea5e9" opacity="0.3" />
-          </svg>
-        </div>
+      {/* Hero — full viewport, dark navy with network graphic on right */}
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-navy">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+          {/* Left side — text */}
+          <div>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Engineering the Future of{" "}
+              <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
+                Intelligent Applications
+              </span>
+            </h1>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-blue-200/70">
+              Engineering the future of intelligent applications — where research
+              meets code to create transformative solutions.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-lg bg-primary px-8 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-primary/40"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="/research"
+                className="rounded-lg border border-white/20 bg-white/5 px-8 py-3.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
+              >
+                Our Research
+              </Link>
+            </div>
+          </div>
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy" />
+          {/* Right side — network visualization */}
+          <div className="hidden lg:block">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" className="w-full">
+              {/* Outer glow */}
+              <defs>
+                <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+                </radialGradient>
+                <filter id="blur">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+                </filter>
+              </defs>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Engineering the Future of{" "}
-            <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
-              Intelligent Applications
-            </span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-blue-200/70">
-            Engineering the future of intelligent applications — where research
-            meets code to create transformative solutions.
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/contact"
-              className="rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-primary/40"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/research"
-              className="rounded-lg border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
-            >
-              Our Research
-            </Link>
+              {/* Connection lines */}
+              <line x1="250" y1="120" x2="380" y2="180" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" />
+              <line x1="250" y1="120" x2="150" y2="220" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+              <line x1="250" y1="120" x2="320" y2="60" stroke="#3b82f6" strokeWidth="1" opacity="0.3" />
+              <line x1="380" y1="180" x2="420" y2="300" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+              <line x1="380" y1="180" x2="300" y2="280" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" />
+              <line x1="150" y1="220" x2="200" y2="350" stroke="#3b82f6" strokeWidth="1.5" opacity="0.4" />
+              <line x1="150" y1="220" x2="300" y2="280" stroke="#0ea5e9" strokeWidth="1" opacity="0.3" />
+              <line x1="300" y1="280" x2="200" y2="350" stroke="#3b82f6" strokeWidth="1.5" opacity="0.4" />
+              <line x1="300" y1="280" x2="420" y2="300" stroke="#0ea5e9" strokeWidth="1" opacity="0.35" />
+              <line x1="200" y1="350" x2="320" y2="420" stroke="#3b82f6" strokeWidth="1.5" opacity="0.4" />
+              <line x1="420" y1="300" x2="320" y2="420" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+              <line x1="320" y1="60" x2="430" y2="100" stroke="#0ea5e9" strokeWidth="1" opacity="0.3" />
+              <line x1="430" y1="100" x2="380" y2="180" stroke="#3b82f6" strokeWidth="1" opacity="0.3" />
+              <line x1="80" y1="300" x2="150" y2="220" stroke="#3b82f6" strokeWidth="1" opacity="0.25" />
+              <line x1="80" y1="300" x2="200" y2="350" stroke="#0ea5e9" strokeWidth="1" opacity="0.25" />
+              <line x1="450" y1="400" x2="420" y2="300" stroke="#3b82f6" strokeWidth="1" opacity="0.2" />
+              <line x1="450" y1="400" x2="320" y2="420" stroke="#0ea5e9" strokeWidth="1" opacity="0.25" />
+              <line x1="100" y1="120" x2="150" y2="220" stroke="#3b82f6" strokeWidth="1" opacity="0.2" />
+              <line x1="100" y1="120" x2="250" y2="120" stroke="#0ea5e9" strokeWidth="1" opacity="0.2" />
+
+              {/* Glow circles behind nodes */}
+              <circle cx="250" cy="120" r="30" fill="url(#nodeGlow)" />
+              <circle cx="380" cy="180" r="25" fill="url(#nodeGlow)" />
+              <circle cx="300" cy="280" r="35" fill="url(#nodeGlow)" />
+              <circle cx="200" cy="350" r="20" fill="url(#nodeGlow)" />
+
+              {/* Primary nodes (large) */}
+              <circle cx="250" cy="120" r="10" fill="#3b82f6" opacity="0.9" />
+              <circle cx="250" cy="120" r="5" fill="#93c5fd" />
+              <circle cx="380" cy="180" r="8" fill="#0ea5e9" opacity="0.9" />
+              <circle cx="380" cy="180" r="4" fill="#7dd3fc" />
+              <circle cx="150" cy="220" r="9" fill="#3b82f6" opacity="0.85" />
+              <circle cx="150" cy="220" r="4.5" fill="#93c5fd" />
+              <circle cx="300" cy="280" r="12" fill="#3b82f6" opacity="0.9" />
+              <circle cx="300" cy="280" r="6" fill="#93c5fd" />
+              <circle cx="200" cy="350" r="8" fill="#0ea5e9" opacity="0.85" />
+              <circle cx="200" cy="350" r="4" fill="#7dd3fc" />
+              <circle cx="420" cy="300" r="7" fill="#3b82f6" opacity="0.8" />
+              <circle cx="420" cy="300" r="3.5" fill="#93c5fd" />
+              <circle cx="320" cy="420" r="9" fill="#0ea5e9" opacity="0.85" />
+              <circle cx="320" cy="420" r="4.5" fill="#7dd3fc" />
+
+              {/* Secondary nodes (small) */}
+              <circle cx="320" cy="60" r="5" fill="#3b82f6" opacity="0.6" />
+              <circle cx="320" cy="60" r="2.5" fill="#93c5fd" />
+              <circle cx="430" cy="100" r="4" fill="#0ea5e9" opacity="0.5" />
+              <circle cx="430" cy="100" r="2" fill="#7dd3fc" />
+              <circle cx="80" cy="300" r="4" fill="#3b82f6" opacity="0.4" />
+              <circle cx="80" cy="300" r="2" fill="#93c5fd" />
+              <circle cx="450" cy="400" r="3.5" fill="#0ea5e9" opacity="0.4" />
+              <circle cx="450" cy="400" r="1.5" fill="#7dd3fc" />
+              <circle cx="100" cy="120" r="3.5" fill="#3b82f6" opacity="0.35" />
+              <circle cx="100" cy="120" r="1.5" fill="#93c5fd" />
+
+              {/* Tiny ambient dots */}
+              <circle cx="180" cy="160" r="1.5" fill="#3b82f6" opacity="0.3" />
+              <circle cx="340" cy="140" r="1.5" fill="#0ea5e9" opacity="0.25" />
+              <circle cx="260" cy="380" r="1.5" fill="#3b82f6" opacity="0.25" />
+              <circle cx="370" cy="350" r="1.5" fill="#0ea5e9" opacity="0.3" />
+              <circle cx="130" cy="280" r="1.5" fill="#3b82f6" opacity="0.2" />
+              <circle cx="400" cy="220" r="1.5" fill="#0ea5e9" opacity="0.2" />
+              <circle cx="220" cy="250" r="1.5" fill="#3b82f6" opacity="0.2" />
+              <circle cx="350" cy="380" r="1.5" fill="#0ea5e9" opacity="0.2" />
+            </svg>
           </div>
         </div>
 
